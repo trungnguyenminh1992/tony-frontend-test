@@ -1,0 +1,15 @@
+@media (min-width: 1024px) {
+  .row {
+    justify-content: space-between; }
+  .col {
+    width: 30%; } }
+
+@media (max-width: 1023px) {
+  .row {
+    justify-content: space-around; }
+  .col {
+    width: 45%; } }
+
+@media (max-width: 767px) {
+  .col {
+    width: 90%; } }
