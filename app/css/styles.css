@@ -1,44 +1,46 @@
-@media (min-width: 1024px) {
-  .row {
-    justify-content: space-between; }
-  .col {
-    width: 30%; } }
-
-@media (max-width: 1023px) {
-  .row {
-    justify-content: space-around; }
-  .col {
-    width: 45%; } }
-
-@media (max-width: 767px) {
-  .col {
-    width: 90%; } }
+@font-face {
+  font-family: 'ProximaNovaSoft-Regular';
+  src: url("../fonts/ProximaNovaSoft-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNovaSoft-Regular.otf") format("opentype"), url("../fonts/ProximaNovaSoft-Regular.woff") format("woff"), url("../fonts/ProximaNovaSoft-Regular.ttf") format("truetype"); }
 
 * {
   margin: 0;
   padding: 0; }
 
 body {
-  font-family: sans-serif; }
+  font-family: "ProximaNovaSoft-Regular", sans-serif; }
 
 .row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   max-width: 1024px;
   margin: 0 auto; }
   .row--title {
     justify-content: center; }
 
-.section-posts {
+.section {
   border-top: 1px solid #D3D3D3;
   padding-bottom: 50px;
   background-color: #F2F2F2; }
+  .section__title {
+    padding: 20px 0;
+    font-weight: 900;
+    text-align: center;
+    color: #080808; }
 
-.section__title {
-  padding: 20px 0;
-  font-weight: 900;
-  text-align: center;
-  color: #080808; }
+@media (min-width: 1024px) {
+  .col-3 {
+    width: 30%; } }
+
+@media (max-width: 1023px) {
+  .row {
+    padding: 0 40px; }
+  .col-3 {
+    width: 48%; } }
+
+@media (max-width: 767px) {
+  .col-3 {
+    width: 100%; } }
 
 .post {
   margin-bottom: 50px;

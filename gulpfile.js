@@ -11,7 +11,7 @@ var cache = require('gulp-cache');
 var del = require('del');
 
 gulp.task('sass', function(){
-    return gulp.src('app/scss/**/*.scss')
+    return gulp.src('app/scss/styles.scss')
         .pipe(sass())
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({
@@ -45,6 +45,11 @@ gulp.task('images', function(){
         .pipe(gulp.dest('dist/images'))
 });
 
+gulp.task('fonts', function() {
+    return gulp.src('app/fonts/**/*')
+    .pipe(gulp.dest('dist/fonts'))
+});
+
 gulp.task('clean:dist', function() {
     return del.sync('dist');
 });
@@ -57,7 +62,7 @@ gulp.task('default', function (callback) {
 
 gulp.task('build', function (callback) {
     runSequence('clean:dist',
-      ['sass', 'useref', 'images'],
+      ['sass', 'useref', 'images', 'fonts'],
       callback
     );
 });

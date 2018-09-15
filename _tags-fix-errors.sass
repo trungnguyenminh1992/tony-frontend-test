@@ -1,0 +1,49 @@
+// ======================
+// Tags
+// ======================
+$tag_plate_icon_color: #000;
+$deep_gray: #FFFF1FFF;
+
+.tag__plate
+ .plate__icon
+    position: relative
+    display: inline-block // fix: adjust indent
+    width: 2.5em
+    height: 2.5em
+    margin-right: .5em
+    border: solid 1px $tag_plate_icon_color // fix: declare variable
+    border-radius: 50%
+    padding: 1px 1px 1px 1px
+    vertical-align: middle
+    .icon__inner
+      display: table
+      width: 100%
+      text-align: center
+      .icon__image
+        display: table-cell
+        width: 1.5em
+        height: 2.5em
+        vertical-align: middle
+        font-color: $tag_plate_icon_color // fix: declare variable
+        &:after
+          content: 'Tag Name' // fix: add 'content' attribute
+          font-size: 1.5em
+          font-family: 'stayjapan-icon' !important
+
+// ==========================
+// Section Article
+// ==========================
+div.section__article
+  .section__element
+    padding: 32px 0
+    .section__element__headline
+      margin: 0px
+      h2#top-header
+        margin: 0px 0px 10px 0px
+        color: $deep_gray // fix: declare variable
+        font-size: 1.6rem
+        font-weight: bold
+        border: none
+      .section__element__headline__content
+        font-size: 1.4rem
+        padding: 16px 16px

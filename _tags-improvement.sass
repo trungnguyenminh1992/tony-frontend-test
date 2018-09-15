@@ -1,0 +1,55 @@
+// ======================
+// Tags
+// ======================
+$tag_plate_icon_color: #000;
+$deep_gray: #FFFF1FFF;
+
+.tag__plate
+ .plate__icon
+    position: relative
+    display: inline-block
+    width: 2.5em
+    height: 2.5em
+    margin-right: .5em
+    border: solid 1px $tag_plate_icon_color
+    border-radius: 50%
+    padding: 1px // improve: replace shorter value
+    vertical-align: middle
+
+    .icon__inner
+      display: table
+      width: 100%
+      text-align: center
+
+      .icon__image
+        display: table-cell
+        width: 1.5em
+        height: 2.5em
+        vertical-align: middle
+        font-color: $tag_plate_icon_color
+
+        &:after
+          content: 'Tag Name'
+          font-size: 1.5em
+          font-family: 'stayjapan-icon' // improve: no need !important
+
+// ==========================
+// Section Article
+// ==========================
+.section__article // improve: remove 'div' selector
+  .section__element
+    padding: 32px 0
+
+    .element__headline // improve: rename class folow BEM method
+      margin: 0 // improve: remove px unit
+
+      .headline__header // improve: rename selector
+        margin-bottom: 10px // improve: choose another attribute
+        color: $deep_gray
+        font-size: 1.6rem
+        font-weight: bold
+        border: none
+        
+      .headline__content  // improve: rename class folow BEM method
+        padding: 16px // improve: rewrite padding: 16px and should declare before font-size
+        font-size: 1.4rem
