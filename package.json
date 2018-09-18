@@ -4,7 +4,8 @@
   "description": "This is the test coding test for frontend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp default",
+    "build": "gulp build --production"
   },
   "repository": {
     "type": "git",
