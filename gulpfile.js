@@ -11,9 +11,10 @@ var cache = require('gulp-cache');
 var del = require('del');
 
 gulp.task('sass', function(){
-    return gulp.src('app/scss/styles.scss')
+    return gulp.src('app/scss/**/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('app/css'))
+        .pipe(gulpIf('*.css', cssnano()))
+        .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.reload({
             stream: true
         }));
@@ -22,7 +23,7 @@ gulp.task('sass', function(){
 gulp.task('browserSync', function() {
     browserSync.init({ 
       server: {
-        baseDir: 'app'
+        baseDir: 'dist'
       }
     });
 });
@@ -34,8 +35,6 @@ gulp.task('watch', function(){
 
 gulp.task('useref', function(){
     return gulp.src('app/*.html')
-      .pipe(useref())
-      .pipe(gulpIf('*.css', cssnano()))
       .pipe(gulp.dest('dist'))
 });
 
@@ -55,7 +54,8 @@ gulp.task('clean:dist', function() {
 });
 
 gulp.task('default', function (callback) {
-    runSequence(['sass','browserSync'], 'watch',
+    runSequence('clean:dist',
+        ['sass','useref', 'images', 'fonts', 'browserSync'], 'watch',
       callback
     );
 });
