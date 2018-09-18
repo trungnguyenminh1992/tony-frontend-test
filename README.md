@@ -15,7 +15,7 @@ gulp-cssnano
 gulp-if  
 gulp-imagemin  
 gulp-sass   
-gulp-useref
+gulp-useref  
 gulp-load-plugins  
 run-sequence   
 
